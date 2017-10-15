@@ -7,6 +7,8 @@ use GDO\DB\GDT_Enum;
 
 /**
  * Adds tiny-mce to GDT_Message fields.
+ * Offers a configurable smiley set.
+ * 
  * @author gizmore
  * @version 6.05
  */
