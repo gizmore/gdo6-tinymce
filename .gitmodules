@@ -1,0 +1,3 @@
+[submodule "3p/Smileys"]
+	path = 3p/Smileys
+	url = https://github.com/nhammadi/Smileys

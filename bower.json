@@ -1,0 +1,25 @@
+{
+  "name": "gdo6-tinymce",
+  "homepage": "https://github.com/gizmore/gdo6",
+  "authors": [
+    "gizmore <gizmore@wechall.net>"
+  ],
+  "description": "add tiny mce to gdo6",
+  "main": "Module_TinyMCE.php",
+  "keywords": [
+    "gdo",
+    "tinymce"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tinymce": "^4.6.6"
+  }
+}
