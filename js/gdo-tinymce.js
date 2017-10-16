@@ -1,5 +1,7 @@
 "use strict";
 $(function(){
+	tinymce.baseURL = window.location.origin + "/GDO/TinyMCE/bower_components/tinymce/"; // trailing slash important
+
 	tinymce.init({
 		skin_url: window.location.origin + '/GDO/TinyMCE/bower_components/tinymce/skins/lightgray',
 		selector: '.gdt-message textarea',
