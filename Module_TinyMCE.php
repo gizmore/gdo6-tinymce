@@ -4,6 +4,7 @@ namespace GDO\TinyMCE;
 use GDO\Core\GDO_Module;
 use GDO\Core\Module_Core;
 use GDO\DB\GDT_Enum;
+use GDO\Util\Javascript;
 
 /**
  * Adds tiny-mce to GDT_Message fields.
@@ -36,10 +37,11 @@ final class Module_TinyMCE extends GDO_Module
 		
 		# TinyMCE
 		$this->addBowerJavascript("tinymce/tinymce$min.js");
-		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
-		$this->addBowerJavascript("tinymce/plugins/autolink/plugin$min.js");
-		$this->addBowerJavascript("tinymce/plugins/autoresize/plugin$min.js");
-		$this->addBowerJavascript("tinymce/plugins/preview/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/autolink/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/autoresize/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/preview/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/codesample/plugin$min.js");
 		$this->addBowerJavascript("tinymce/themes/modern/theme$min.js");
 	
 		# Smiley plugin
@@ -58,6 +60,11 @@ final class Module_TinyMCE extends GDO_Module
 		}
 		$this->addJavascript('js/gdo-tinymce.js');
 		$this->addCSS('css/gdo6-material-tinymce.css');
+		# Prism code highlight,
+		$this->addJavascript('3p/prism/prism.js');
+		$this->addCSS('3p/prism/prism.css');
+		
+		Javascript::addJavascriptInline('console.log(window.Prism);');
 	}
 	
 }
