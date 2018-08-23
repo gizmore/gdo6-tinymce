@@ -1,9 +1,11 @@
 "use strict";
 $(function(){
-	tinymce.baseURL = window.location.origin + "/GDO/TinyMCE/bower_components/tinymce/"; // trailing slash important
+	console.log(window.location);
+	var pathname = window.location.pathname.replace('/index.php', '');
+	tinymce.baseURL = window.location.origin + '/' + pathname + "/GDO/TinyMCE/bower_components/tinymce/"; // trailing slash important
 
 	tinymce.init({
-		skin_url: window.location.origin + '/GDO/TinyMCE/bower_components/tinymce/skins/lightgray',
+		skin_url: window.location.origin + '/' + pathname + '/GDO/TinyMCE/bower_components/tinymce/skins/lightgray',
 		selector: '.gdt-message textarea.wysiwyg',
 		plugins: "autosave,link,autoresize,autolink,smileys,code,codesample",
 		toolbar: "code undo redo restoredraft |  "+
