@@ -36,13 +36,13 @@ final class Module_TinyMCE extends GDO_Module
 		$min = Module_Core::instance()->cfgMinifyJS() !== 'no' ? '.min' : '';
 		
 		# TinyMCE
-		$this->addBowerJavascript("tinymce/tinymce$min.js");
+		$this->addBowerJavascript("tinymce/jquery.tinymce$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/autolink/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/autoresize/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/preview/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/codesample/plugin$min.js");
-		$this->addBowerJavascript("tinymce/themes/modern/theme$min.js");
+		$this->addBowerJavascript("tinymce/themes/mobile/theme$min.js");
 	
 		# Smiley plugin
 		$this->addJavascript("3p/Smileys/smileys/plugin$min.js");
