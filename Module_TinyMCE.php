@@ -4,7 +4,6 @@ namespace GDO\TinyMCE;
 use GDO\Core\GDO_Module;
 use GDO\Core\Module_Core;
 use GDO\DB\GDT_Enum;
-use GDO\Util\Javascript;
 
 /**
  * Adds tiny-mce to GDT_Message fields.
@@ -38,7 +37,7 @@ final class Module_TinyMCE extends GDO_Module
 		# TinyMCE
 		$this->addBowerJavascript("tinymce/tinymce$min.js");
 		$this->addBowerJavascript("tinymce/jquery.tinymce$min.js");
-		// 		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
+// 		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/autolink/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/autoresize/plugin$min.js");
 // 		$this->addBowerJavascript("tinymce/plugins/preview/plugin$min.js");
@@ -64,8 +63,8 @@ final class Module_TinyMCE extends GDO_Module
 		# Prism code highlight,
 		$this->addJavascript('3p/prism/prism.js');
 		$this->addCSS('3p/prism/prism.css');
-		
-		Javascript::addJavascriptInline('console.log(window.Prism);');
+
+// 		Javascript::addJavascriptInline('console.log(window.Prism);');
 	}
 	
 }

@@ -1,6 +1,5 @@
 "use strict";
 $(function(){
-	console.log(window.location);
 	var pathname = window.location.pathname.replace('/index.php', '');
 	tinymce.baseURL = window.location.origin + '/' + pathname + "/GDO/TinyMCE/bower_components/tinymce/"; // trailing slash important
 
