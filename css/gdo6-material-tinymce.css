@@ -1,8 +1,8 @@
 /** **/
 @media screen and (max-width: 515px) {
     .mce-window {
-        max-width: 320px !important;
-        left: calc(50% - 160px) !important;
+/*         max-width: 320px !important; */
+/*         left: calc(50% - 160px) !important; */
     }
     .mce-window-body {
         max-width: 100% !important;
@@ -23,7 +23,7 @@
     .mce-panel > .mce-container-body,
     .mce-foot,
     .mce-foot > .mce-abs-layout {
-        max-width: 320px !important;
+/*         max-width: 320px !important; */
         text-align: center;
     }
     .mce-formitem {
