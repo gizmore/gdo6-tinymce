@@ -5,7 +5,7 @@ $(function(){
 
 	tinymce.init({
 		skin_url: window.location.origin + '/' + pathname + '/GDO/TinyMCE/bower_components/tinymce/skins/lightgray',
-		selector: '.gdt-message textarea.wysiwyg',
+		selector: 'textarea.wysiwyg',
 		plugins: "autosave,link,autoresize,autolink,smileys,code,codesample",
 		toolbar: "code undo redo restoredraft |  "+
 		"alignleft aligncenter alignright alignjustify | "+
