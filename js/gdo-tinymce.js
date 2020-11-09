@@ -4,6 +4,7 @@ $(function(){
 	tinymce.baseURL = window.location.origin + '/' + pathname + "/GDO/TinyMCE/bower_components/tinymce/"; // trailing slash important
 
 	tinymce.init({
+//		width: '70%',
 		skin_url: window.location.origin + '/' + pathname + '/GDO/TinyMCE/bower_components/tinymce/skins/lightgray',
 		selector: 'textarea.wysiwyg',
 		plugins: "autosave,link,autoresize,autolink,smileys,code,codesample",
@@ -21,4 +22,6 @@ $(function(){
 	    smileys: window.TINYMCESMILEYS,
 	    autosave_ask_before_unload: true
 	});
+	
+	$('textarea.wysiwyg').removeAttr('min').removeAttr('required');
 });
