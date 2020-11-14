@@ -10,20 +10,23 @@ use GDO\DB\GDT_Enum;
  * Offers a configurable smiley set.
  * 
  * @author gizmore
- * @version 6.05
+ * @version 6.10
+ * @since 6.05
  */
 final class Module_TinyMCE extends GDO_Module
 {
 	public $module_priority = 18;
+	
+	public function onLoadLanguage() { $this->loadLanguage('lang/tinymce'); }
 
 	##############
 	### Config ###
 	##############
 	public function getConfig()
 	{
-		return array(
-			GDT_Enum::make('smiley_set')->enumValues('default', 'gwf4')->initial('default'),
-		);
+		return [
+			GDT_Enum::make('smiley_set')->enumValues('smileys_default', 'smileys_gwf4')->initial('smileys_default'),
+		];
 	}
 	public function cfgSmileySet() { return $this->getConfigVar('smiley_set'); }
 	
@@ -55,8 +58,8 @@ final class Module_TinyMCE extends GDO_Module
 	{
 		switch ($this->cfgSmileySet())
 		{
-			case 'default': $this->addJavascript('js/gdo-default-icons.js'); break;
-			case 'gwf4': $this->addJavascript('js/gdo-gwf4-icons.js'); break;
+			case 'smileys_default': $this->addJavascript('js/gdo-default-icons.js'); break;
+			case 'smileys_gwf4': $this->addJavascript('js/gdo-gwf4-icons.js'); break;
 		}
 		$this->addJavascript('js/gdo-tinymce.js');
 		$this->addCSS('css/gdo6-material-tinymce.css');
