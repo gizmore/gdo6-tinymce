@@ -18,6 +18,8 @@ final class Module_TinyMCE extends GDO_Module
 	public $module_priority = 18;
 	
 	public function onLoadLanguage() { $this->loadLanguage('lang/tinymce'); }
+	
+	public function getBlockedModules() { return ['CKEditor']; }
 
 	##############
 	### Config ###
