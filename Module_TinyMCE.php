@@ -21,6 +21,8 @@ final class Module_TinyMCE extends GDO_Module
 	
 	public function getBlockedModules() { return ['CKEditor']; }
 
+	public function thirdPartyFolders() { return ['/3p/']; }
+	
 	##############
 	### Config ###
 	##############
