@@ -4,6 +4,7 @@ namespace GDO\TinyMCE;
 use GDO\Core\GDO_Module;
 use GDO\Core\Module_Core;
 use GDO\DB\GDT_Enum;
+use GDO\Javascript\Module_Javascript;
 
 /**
  * Adds tiny-mce to GDT_Message fields.
@@ -39,7 +40,7 @@ final class Module_TinyMCE extends GDO_Module
 	##############
 	public function onIncludeScripts()
 	{
-		$min = Module_Core::instance()->cfgMinifyJS() !== 'no' ? '.min' : '';
+		$min = Module_Javascript::instance()->jsMinAppend();
 		
 		# TinyMCE
 		$this->addBowerJavascript("tinymce/tinymce$min.js");
