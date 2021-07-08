@@ -5,6 +5,8 @@ use GDO\Core\GDO_Module;
 use GDO\Core\Module_Core;
 use GDO\DB\GDT_Enum;
 use GDO\Javascript\Module_Javascript;
+use GDO\UI\GDT_Message;
+use GDO\DB\GDT_Checkbox;
 
 /**
  * Adds tiny-mce to GDT_Message fields.
@@ -30,10 +32,12 @@ final class Module_TinyMCE extends GDO_Module
 	public function getConfig()
 	{
 		return [
-			GDT_Enum::make('smiley_set')->enumValues('smileys_default', 'smileys_gwf4')->initial('smileys_default'),
+		    GDT_Enum::make('smiley_set')->enumValues('smileys_default', 'smileys_gwf4')->initial('smileys_default'),
+		    GDT_Checkbox::make('prism')->initial('1'),
 		];
 	}
 	public function cfgSmileySet() { return $this->getConfigVar('smiley_set'); }
+	public function cfgPrism() { return $this->getConfigVar('prism'); }
 	
 	##############
 	### Assets ###
@@ -68,11 +72,18 @@ final class Module_TinyMCE extends GDO_Module
 		}
 		$this->addJavascript('js/gdo-tinymce.js');
 		$this->addCSS('css/gdo6-material-tinymce.css');
-		# Prism code highlight,
-		$this->addJavascript('3p/prism/prism.js');
-		$this->addCSS('3p/prism/prism.css');
-
-// 		Javascript::addJavascriptInline('console.log(window.Prism);');
+		
+		if ($this->cfgPrism())
+		{
+    		# Prism code highlight,
+    		$this->addJavascript('3p/prism/prism.js');
+    		$this->addCSS('3p/prism/prism.css');
+		}
+	}
+	
+	public function onInit()
+	{
+	    GDT_Message::$EDITOR_NAME = 'TinyMCE';
 	}
 	
 }
