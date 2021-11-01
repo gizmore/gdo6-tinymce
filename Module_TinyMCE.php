@@ -47,17 +47,17 @@ final class Module_TinyMCE extends GDO_Module
 		$min = Module_Javascript::instance()->jsMinAppend();
 		
 		# TinyMCE
-		$this->addBowerJavascript("tinymce/tinymce$min.js");
-		$this->addBowerJavascript("tinymce/jquery.tinymce$min.js");
-// 		$this->addBowerJavascript("tinymce/plugins/link/plugin$min.js");
-// 		$this->addBowerJavascript("tinymce/plugins/autolink/plugin$min.js");
-// 		$this->addBowerJavascript("tinymce/plugins/autoresize/plugin$min.js");
-// 		$this->addBowerJavascript("tinymce/plugins/preview/plugin$min.js");
-// 		$this->addBowerJavascript("tinymce/plugins/codesample/plugin$min.js");
-		$this->addBowerJavascript("tinymce/themes/mobile/theme$min.js");
+		$this->addBowerJS("tinymce/tinymce$min.js");
+		$this->addBowerJS("tinymce/jquery.tinymce$min.js");
+// 		$this->addBowerJS("tinymce/plugins/link/plugin$min.js");
+// 		$this->addBowerJS("tinymce/plugins/autolink/plugin$min.js");
+// 		$this->addBowerJS("tinymce/plugins/autoresize/plugin$min.js");
+// 		$this->addBowerJS("tinymce/plugins/preview/plugin$min.js");
+// 		$this->addBowerJS("tinymce/plugins/codesample/plugin$min.js");
+		$this->addBowerJS("tinymce/themes/mobile/theme$min.js");
 	
 		# Smiley plugin
-		$this->addJavascript("3p/Smileys/smileys/plugin$min.js");
+		$this->addJS("3p/Smileys/smileys/plugin$min.js");
 	
 		# GDO smiley pack
 		$this->onIncludeGDOScripts();
@@ -67,16 +67,16 @@ final class Module_TinyMCE extends GDO_Module
 	{
 		switch ($this->cfgSmileySet())
 		{
-			case 'smileys_default': $this->addJavascript('js/gdo-default-icons.js'); break;
-			case 'smileys_gwf4': $this->addJavascript('js/gdo-gwf4-icons.js'); break;
+			case 'smileys_default': $this->addJS('js/gdo-default-icons.js'); break;
+			case 'smileys_gwf4': $this->addJS('js/gdo-gwf4-icons.js'); break;
 		}
-		$this->addJavascript('js/gdo-tinymce.js');
+		$this->addJS('js/gdo-tinymce.js');
 		$this->addCSS('css/gdo6-material-tinymce.css');
 		
 		if ($this->cfgPrism())
 		{
     		# Prism code highlight,
-    		$this->addJavascript('3p/prism/prism.js');
+    		$this->addJS('3p/prism/prism.js');
     		$this->addCSS('3p/prism/prism.css');
 		}
 	}
