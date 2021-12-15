@@ -44,7 +44,7 @@ final class Module_TinyMCE extends GDO_Module
 	##############
 	public function onIncludeScripts()
 	{
-		$min = Module_Javascript::instance()->jsMinAppend();
+		$min = Module_Javascript::instance()->cfgMinAppend();
 		
 		# TinyMCE
 		$this->addBowerJS("tinymce/tinymce$min.js");
